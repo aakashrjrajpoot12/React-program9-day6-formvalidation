@@ -37,6 +37,7 @@ render(){
     <>
     <h1>Form Validation Demo</h1>
     <form onSubmit={(event)=> this.formSubmit(event)}>
+      
       <span>User Name:</span>
       <input 
       name="userName"
@@ -44,6 +45,9 @@ render(){
       value={this.state.userName}
       onChange={(event)=>this.changeHandler (event)}
       />
+      
+      <br/>
+      
       <span>Feedback:</span>
       <textarea
       name="userFeedback"
@@ -51,6 +55,8 @@ render(){
       onChange={(event)=>this.changeHandler
       (event)}
       />
+     
+      <br/>
       <buttom type="submit">Click Me</buttom>
 
       </form>
