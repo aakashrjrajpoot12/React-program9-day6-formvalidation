@@ -1,8 +1,7 @@
 import React from 'react';
-export deafult class FormValidation extends React.
+export default class FormValidation extends React.
 Component{
   state={
-    state={
       userName:'',
       userFeedback:'',
 
