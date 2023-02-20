@@ -57,7 +57,7 @@ render(){
       />
      <br/>
      {/* step5: when we click on click me buttton it will go to fromsubmit */}
-     {/* <buttom  type="submit">Click Me</buttom> */}
+      
       <input type="submit" value="Click Me" />
 
       </form>
