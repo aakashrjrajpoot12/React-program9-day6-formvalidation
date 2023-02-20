@@ -1,23 +1,24 @@
 import React from 'react';
 export default class FormValidation extends React.
 Component{
-  state={
+  state={ //step2 value will be updated to userName, userFeedback
       userName:'',
       userFeedback:'',
 
     };
     changeHandler=(event)=>{
       this.setState({ 
-        [event.target.name]:  event.target.value, 
+        [event.target.name]:  event.target.value, //step4 here .name can be userFeedback/userName and .value is the value which we provide in inside.name
        });
    };
-formSubmit=(event) =>{
+formSubmit=(event) =>{//step6
   //prevent it from submitting a form -default behaviour
   event.preventDefault();
-  console.log(his.state);
-  let valFlag=this.isValidate();
-  if(valFlag){
-    console.log('Username cannot be blank');
+  console.log(this.state);
+  let valFlag=this.isValidate();//step7 go to line 28
+  if(valFlag){ //step9
+    console.log('Username cannot be blank');//step10 if you kept Username empty then this msg would be displayed 
+    //Step11 check console
     }
     this.setState({
       userName:'',
@@ -25,7 +26,7 @@ formSubmit=(event) =>{
 
     });
 };
-isValidate=() =>{
+isValidate=() =>{        // step8 this method is called to check 
   let bFlag=false;
   if(!this.state.userName){
     bFlag=true;
@@ -42,8 +43,8 @@ render(){
       <input 
       name="userName"
       type="text"
-      value={this.state.userName}
-      onChange={(event)=>this.changeHandler (event)}
+      value={this.state.userName}//step1
+      onChange={(event)=>this.changeHandler (event)}//Step3 :whenever you are changing value of username onChange would be called and it will update the state this.setState(line 22) ,after that go to .changehandler line 9
       />
       
       <br/>
@@ -52,12 +53,12 @@ render(){
       <textarea
       name="userFeedback"
       value={this.state.userFeedback}
-      onChange={(event)=>this.changeHandler
-      (event)}
+      onChange={(event)=>this.changeHandler(event)}
       />
-     
-      <br/>
-      <buttom type="submit">Click Me</buttom>
+     <br/>
+     {/* step5: when we click on click me buttton it will go to fromsubmit */}
+     {/* <buttom  type="submit">Click Me</buttom> */}
+      <input type="submit" value="Click Me" />
 
       </form>
       </>
